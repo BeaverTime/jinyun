@@ -1,5 +1,6 @@
 <template>
-  <div style="border: 1px solid #ccc">
+  <div class="editor-wrapper">
+    <div class="editor-container">
     <Toolbar
       style="border-bottom: 1px solid #ccc"
       :editor="editorRef"
@@ -14,6 +15,8 @@
       @onCreated="handleCreated"
     />
   </div>
+  </div>
+  
 </template>
 <script>
 import "@wangeditor/editor/dist/css/style.css"; // 引入 css
@@ -62,3 +65,20 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.editor-container {
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.editor-wrapper {
+  width: 80%;
+  margin: auto;
+  height: fit-content;
+  margin-top: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 5px;
+}
+</style>

@@ -42,3 +42,8 @@ import Nav from './views/Nav/Nav.vue';
   height: calc(100vh - 60px);
 }
 </style>
+<style>
+body {
+  background-color: #f5f7f8;
+}
+</style>

@@ -30,6 +30,7 @@ const router = useRouter()
   align-items: center;
   box-shadow: 0 10px 20px 0 rgba(138, 135, 165, 0.15);
   transition: all 200ms linear;
+  background-color: white;
 }
 .container:hover {
   box-shadow: 0 20px 30px 0 rgba(138, 135, 165, 0.15);
