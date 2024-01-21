@@ -10,5 +10,11 @@ module.exports = defineConfig({
         'components': require('path').resolve(__dirname, 'src', 'components'),
       }
     }
+  },
+  chainWebpack: config => {
+    config.plugin('html').tap(args=>{
+      args[0].title = "一直闲云呀";
+      return args
+    })
   }
 });
