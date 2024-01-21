@@ -1,5 +1,5 @@
 import { createStore } from "vuex";
-import UserStore from './users'
+import UserStore from "./users";
 
 export default createStore({
   state: {},
@@ -7,6 +7,6 @@ export default createStore({
   mutations: {},
   actions: {},
   modules: {
-    UserStore
+    UserStore,
   },
 });
