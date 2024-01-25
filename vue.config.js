@@ -13,7 +13,7 @@ module.exports = defineConfig({
   },
   chainWebpack: config => {
     config.plugin('html').tap(args=>{
-      args[0].title = "一直闲云呀";
+      args[0].title = "一只闲云呀";
       return args
     })
   }
