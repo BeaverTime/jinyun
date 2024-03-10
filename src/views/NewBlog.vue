@@ -74,6 +74,7 @@ export default {
           confirmButtonText:"再想想"
         });
       }
+      
     }
     return {
       title,

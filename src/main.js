@@ -9,3 +9,4 @@ const app = createApp(App);
 app.config.globalProperties.$meesage = message;
 app.config.globalProperties.$swal = Swal
 app.use(store).use(router).mount("#app");
+export default app;
