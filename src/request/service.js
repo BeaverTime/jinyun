@@ -1,6 +1,7 @@
 import HttpErrorCode from "@/config/HttpErrorCode";
 import store from "@/store";
 import { gotoLogin } from "@/utils/nav";
+import { message } from "ant-design-vue";
 import axios from "axios";
 
 const service = axios.create({
@@ -31,7 +32,10 @@ service.interceptors.response.use(
       return res;
   },
   error => {
-      return Promise.reject(error);
+    if(error.code === "ERR_NETWORK") {
+      message.error('网络错误')
+    }
+    return Promise.reject(error);
   }
 );
 

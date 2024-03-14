@@ -4,7 +4,7 @@ import { gotoLogin } from '@/utils/nav';
 /** @type {import('vuex').Module} */
 const UserStore = {
   state: {
-    user: null,
+    user: {},
   },
   actions: {
     async getUser({commit}) {
@@ -14,7 +14,7 @@ const UserStore = {
         return resp.user
       }
       else {
-        gotoLogin()
+        gotoLogin(encodeURIComponent(location.href))
       }
     }
   },

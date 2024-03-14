@@ -1,0 +1,1 @@
+export const cdn = 'https://yuantongphoto-1300775451.file.myqcloud.com/webProject/jinyun'

@@ -10,13 +10,31 @@
           <li :class="{'active': router.currentRoute.value.name === 'blog'}" @click="router.push('/blog')">记录</li>
         </ul>
       </div>
+      <div class="avatar">
+        <Avatar :size="40" v-if="!user.avatar" >
+          <template #icon ><UserOutlined /></template>
+        </Avatar>
+        <Avatar :size="40" v-else :src="cdn + user.avatar"  />
+      </div>
     </nav>
   </div>
 </template>
 
 <script setup>
+import { Avatar } from 'ant-design-vue';
+import { UserOutlined } from '@ant-design/icons-vue';
 import { useRouter } from 'vue-router';
+import { cdn } from '@/config';
+import { computed } from 'vue';
+import { useStore } from 'vuex';
+const store = useStore()
 const router = useRouter()
+
+store.dispatch('UserStore/getUser').catch((error)=>[
+  console.log(error)
+])
+const user = computed(()=> store.state.UserStore.user)
+
 </script>
 
 <style scoped lang="less">
@@ -52,7 +70,10 @@ const router = useRouter()
   height: 100%;
   border-radius: 5px;
 }
-
+.avatar {
+  margin-left: 40px;
+  cursor: pointer;
+}
 .navbar-collapse {
   display: flex;
   justify-content: end;

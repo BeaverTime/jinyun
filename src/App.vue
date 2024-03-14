@@ -1,10 +1,12 @@
 <template>
-  <Nav/>
-  <router-view class="main-content"/>
+  <Nav v-if="router.currentRoute.value.name!=='login'" />
+  <router-view/>
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router';
 import Nav from './views/Nav/Nav.vue';
+const router = useRouter()
 </script>
 
 <style>
@@ -38,12 +40,12 @@ import Nav from './views/Nav/Nav.vue';
 }
 </style>
 <style scoped>
-.main-content {
-  height: calc(100vh - 60px);
-}
 </style>
 <style>
 body {
   background-color: #f5f7f8;
+}
+.full {
+  height: calc(100vh - 60px);
 }
 </style>
